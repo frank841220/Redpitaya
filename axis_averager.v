@@ -103,9 +103,9 @@ module axis_averager #
     if(~aresetn || user_reset)
     begin
       int_addrA_reg <= {(BRAM_ADDR_WIDTH){1'b0}};
-	  int_addrB_reg <= {(BRAM_ADDR_WIDTH){1'b0}};
+      int_addrB_reg <= {(BRAM_ADDR_WIDTH){1'b0}};
       int_case_reg <= 3'd0;
-	  int_averages_reg <= {(AVERAGES_WIDTH){1'b0}};
+      int_averages_reg <= {(AVERAGES_WIDTH){1'b0}};
       int_wren_reg <= 1'b0;
       int_data_reg <= {(BRAM_DATA_WIDTH){1'b0}};
       int_finished_reg <= 1'b0;
