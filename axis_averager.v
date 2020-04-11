@@ -32,11 +32,11 @@ module axis_averager #
   input  wire                        aresetn,
   
   // Averager specific ports
-  input  wire						 trig,
-  input  wire 						 user_reset,
-  input  wire [15:0]				 nsamples,
+  input  wire			     trig,
+  input  wire 			     user_reset,
+  input  wire [15:0] 			 nsamples,
   input  wire [AVERAGES_WIDTH-1:0] 	 naverages,
-  output wire 						 finished,
+  output wire 				 finished,
   output wire [AVERAGES_WIDTH-1:0] 	 averages_out,
   
   // Slave side
@@ -117,10 +117,10 @@ module axis_averager #
       int_addrB_reg <= int_addrB_next;
       int_case_reg <= int_case_next;
       int_wren_reg <= int_wren_next;
-	  int_averages_reg <= int_averages_next;
-	  int_data_reg <= int_data_next;
-	  int_finished_reg <= int_finished_next;
-	  n_count <= n_count_next;
+      int_averages_reg <= int_averages_next;
+      int_data_reg <= int_data_next;
+      int_finished_reg <= int_finished_next;
+      n_count <= n_count_next;
     end
   end
 
@@ -128,13 +128,13 @@ module axis_averager #
   always @*
   begin
     int_addrA_next = int_addrA_reg;
-	int_addrB_next = int_addrB_reg;
+    int_addrB_next = int_addrB_reg;
     int_case_next = int_case_reg;
     int_wren_next = int_wren_reg;
-	int_averages_next = int_averages_reg;
-	int_data_next = int_data_reg;
-	int_finished_next = int_finished_reg;
-	n_count_next = n_count;
+    int_averages_next = int_averages_reg;
+    int_data_next = int_data_reg;
+    int_finished_next = int_finished_reg;
+    n_count_next = n_count;
 	
     case(int_case_reg)
       0:    // Begin state
